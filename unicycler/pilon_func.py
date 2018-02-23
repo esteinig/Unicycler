@@ -251,6 +251,8 @@ def polish_with_pilon(graph, args, polish_dir, insert_size_1st, insert_size_99th
     # Polish with Pilon.
     if args.pilon_path.endswith('.jar'):
         pilon_command = [args.java_path, '-jar', args.pilon_path]
+        if args.pilon_xmx:
+            pilon_command += ['-Xmx' + args.java_xmx]
     else:
         pilon_command = [args.pilon_path]
     pilon_command += ['--genome', input_filename, '--changes',
