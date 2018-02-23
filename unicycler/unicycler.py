@@ -412,6 +412,8 @@ def get_arguments():
     polish_group.add_argument('--java_path', type=str, default='java',
                               help='Path to the java executable'
                                    if show_all_args else argparse.SUPPRESS)
+    polish_group.add_argument('--pilon_xmx', type=str, default='',
++                              help='Java maximum heap size fr Pilon, use for raise of OutOfMemoryError)'
     polish_group.add_argument('--min_polish_size', type=int, default=10000,
                               help='Contigs shorter than this value (bp) will not be polished '
                                    'using Pilon'
